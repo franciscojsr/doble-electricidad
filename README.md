@@ -20,7 +20,7 @@ PROYECTO
 	Angular
 
 		- Se crea proyecto nuevo de Angular con router y login.
-		- Se instala Angular Material, Comonent Dev Kit(CDK) y Angular Animations
+		- Se instala Angular Material, Component Dev Kit(CDK) y Angular Animations
 		- Se usa Boostrap y Fontawesome
 		- Habrá sección login y área privada
 		- Habrán 3 secciones: header, body(Inicio, facturas, d.personales) y footer
