@@ -13,23 +13,31 @@
 
     .degrade_capa{
         position: absolute;
+        top: 0;
         z-index: 0;
         width: 100%;
-        height: 100%;
+        // height: 100%;
         // background: rgba(250,250,0,0.1);
         background: rgba(10, 143, 27, 0.62);
         color: white;
 
         .container-top-footer{
+            padding: 15px;
             // background: rgba(96, 193, 0, 1);
             background: rgba(12,34,34,0.9);
             border-top: 1px solid #063606;
             border-bottom: 1px solid #063606;
             .social-icons{
-                display: flex;
-                justify-content: flex-end;
+                // padding: 15px;
+                // display: flex;
+                // align-items: center;
+                // display: flex;
+                // justify-content: flex-end;
                 a{
                     margin-left: 15px;
+                }
+                div{
+                    display: flex;
                 }
             }
         }
@@ -37,7 +45,7 @@
         .container-body-footer{
             background: rgba(12,34,34,0.6);
             margin-top: -1px;
-            
+            padding: 40px;
             h3{
                 margin: 0;
                 font-weight: bold;
@@ -50,6 +58,7 @@
                 height: 3px;
             }
             p{
+                margin:0 0 2px;
             }
             a{
 
@@ -60,8 +69,8 @@
             background: rgba(12,34,34,0.9);
             border-top: 1px solid #063606;
             margin-top: -2px;
-            height: 62px !important;
-
+            // height: 62px !important;
+            padding: 30px;
             .copyright_footer{
                 display: flex;
                 color:#bbb;
@@ -82,3 +91,20 @@
     align-items: center;
   }
 
+  @media screen and (max-width: 768px) {
+
+    footer{
+        height: 496px;
+    }
+  
+  }
+
+  @media screen and (max-width: 580px) {
+
+    
+    footer{
+        height: 784px;
+    }
+  
+  }
+  

@@ -9,7 +9,6 @@ import { NavbarComponent } from './navbar/navbar.component';
 
 import { LoginComponent } from './login/login.component';
 import { LogoutComponent } from './logout/logout.component';
-import { FormulariosComponent } from './componentes/formularios/formularios.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { HomeModule } from './home/home.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -24,7 +23,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     // NavbarComponent,
     LoginComponent,
     // LogoutComponent,
-    FormulariosComponent,
     PagenotfoundComponent,
     FooterComponent,
   
