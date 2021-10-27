@@ -1,0 +1,16 @@
+<nav class="navbar fixed-top navbar-dark navbar-expand-lg ">
+    <a class="navbar-brand" href="#"><i class="fas fa-charging-station"></i> Doble Electricidad</a>
+    <button class="navbar-toggler" type="button" (click)="checkSession()" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a *ngIf="login" class="nav-item nav-link" href="#/home">Inicio</a>
+        <a *ngIf="login" class="nav-item nav-link" href="#/facturas">Facturas</a>
+        <a *ngIf="login" class="nav-item nav-link" href="#/datospersonales">Datos personales</a>
+        <!-- <a *ngIf="!login" title="login" class="nav-item nav-link" href="javascript:void()"><i class="fas fa-sign-in-alt"></i></a>  -->
+        <!-- LOGIN -->
+        <app-logout *ngIf="login"></app-logout>
+      </div>
+    </div>
+</nav>

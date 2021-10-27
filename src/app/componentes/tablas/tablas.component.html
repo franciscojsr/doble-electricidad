@@ -1,0 +1,118 @@
+<div class="mat-elevation-z8">
+
+    <div id="bar_buttons_container">
+
+        <span>
+            <input (keyup)="searchTable($event)" placeholder="Buscar..." type="text" class="form-control" id="search"/>
+        </span>
+        
+        <span class="print_add_button">
+            <button *ngIf="add_row" mat-mini-fab color="primary" (click)="addRow()" style="background: #6767f7;">
+              <mat-icon>add</mat-icon>
+            </button>
+        </span>
+
+        <span class="print_add_button">
+            <button mat-mini-fab color="primary" (click)="printTable()">
+              <mat-icon>print</mat-icon>
+            </button>
+        </span>
+
+    </div>
+
+    <table id="table" #table mat-table [dataSource]="dataSource">
+  
+      <!-- Position Column -->
+      <ng-container *ngIf="nombre" matColumnDef="nombre">
+        <th mat-header-cell *matHeaderCellDef> {{ nombre | capitalizePipes }} </th>
+        <td mat-cell *matCellDef="let element" contenteditable="false" >
+          <input type="text" name="nombre" [(ngModel)]="element.nombre" />
+          <span hidden>{{element.nombre}}</span>
+        </td>
+      </ng-container>
+  
+      <!-- Email Column -->
+      <ng-container *ngIf="email" matColumnDef="email">
+        <th mat-header-cell *matHeaderCellDef> {{ email | capitalizePipes }} </th>
+        <td mat-cell *matCellDef="let element" contenteditable="false">
+          <input type="text" name="email" [(ngModel)]="element.email" />
+          <span hidden>{{element.email}}</span>
+      </td>
+      </ng-container>
+
+      <!-- Fecha Emision -->
+      <ng-container *ngIf="fecha_emision" matColumnDef="fecha_emision">
+        <th mat-header-cell *matHeaderCellDef> {{ fecha_emision | capitalizePipes }} </th>
+        <td mat-cell *matCellDef="let element" contenteditable="false" >
+          <input type="text" name="fecha_emision" [(ngModel)]="element.fecha_emision" />
+          <span hidden>{{element.fecha_emision}}</span>
+        </td>
+      </ng-container>
+
+      <!-- fecha alta Column -->
+      <ng-container *ngIf="fecha_alta" matColumnDef="fecha_alta">
+        <th mat-header-cell *matHeaderCellDef> {{ fecha_alta | capitalizePipes }} </th>
+        <td mat-cell *matCellDef="let element" contenteditable="false" >
+          <input type="text" name="fecha_alta" [(ngModel)]="element.fecha_alta" />
+          <span hidden>{{element.fecha_alta}}</span>
+        </td>
+      </ng-container>
+  
+      <!-- importe Column -->
+      <ng-container *ngIf="importe" matColumnDef="importe">
+        <th mat-header-cell *matHeaderCellDef> {{ importe | capitalizePipes }} </th>
+        <td mat-cell *matCellDef="let element" contenteditable="false" >
+          <input type="text" name="importe" [(ngModel)]="element.importe" />
+          <span hidden>{{element.importe}}</span>
+        </td>
+      </ng-container>
+  
+      <!-- Direccion suministro Column -->
+      <ng-container *ngIf="dir_suministro" matColumnDef="dir_suministro">
+        <th mat-header-cell *matHeaderCellDef> {{ dir_suministro | capitalizePipes }} </th>
+        <td mat-cell *matCellDef="let element" contenteditable="false" >
+          <input type="text" name="dir_suministro" [(ngModel)]="element.dir_suministro" />
+          <span hidden>{{element.dir_suministro}}</span>
+        </td>
+      </ng-container>
+
+      <!-- Direccion envio Column -->
+      <ng-container *ngIf="dir_envio" matColumnDef="dir_envio">
+        <th mat-header-cell *matHeaderCellDef> {{ dir_envio | capitalizePipes }} </th>
+        <td mat-cell *matCellDef="let element" contenteditable="false" >
+          <input type="text" name="dir_envio" [(ngModel)]="element.dir_envio" />
+          <span hidden>{{element.dir_envio}}</span>
+        </td>
+      </ng-container>
+
+      <!-- opciones Column -->
+      <ng-container *ngIf="opciones" matColumnDef="opciones">
+        <th mat-header-cell *matHeaderCellDef> {{ opciones | capitalizePipes}} </th>
+        <td mat-cell *matCellDef="let element;let i = index;"> 
+            <button *ngIf="element.opciones.guardar" (click)="guardarRow(i)" class="opciones_button" mat-mini-fab color="primary" style="background: green;">
+                <mat-icon>save</mat-icon>
+            </button>
+            <button *ngIf="element.opciones.editar" (click)="editRow($event, i)" class="opciones_button" mat-mini-fab color="primary" style="background: orange;">
+                <mat-icon>edit</mat-icon>
+            </button>
+            <!-- <button *ngIf="element.opciones.eliminar" (click)="deleteRow(i)" class="opciones_button" mat-mini-fab color="primary">
+                <mat-icon>delete</mat-icon>
+            </button> -->
+        </td>
+      </ng-container>
+
+  
+      <tr mat-header-row *matHeaderRowDef="columns"></tr>
+      <tr #tr mat-row *matRowDef="let row; columns: columns;"></tr>
+      
+    </table>
+
+    <div *ngIf="!dataSource" style="color: #fff;">No hay Datos</div>
+  
+    <mat-paginator [pageSizeOptions]="[5, 10, 20]"
+                   showFirstLastButtons 
+                   aria-label="Select page of periodic elements">
+    </mat-paginator>
+</div>
+  
+<div *ngIf="msg_modal" id="modal_mensajes"><i class="fas fa-times-circle" (click)="closeModal($event)"></i>{{msg_modal}}</div>

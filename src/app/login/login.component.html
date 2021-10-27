@@ -1,0 +1,54 @@
+<app-navbar></app-navbar>
+
+<div class="body">
+
+
+    <div class="text-center">
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container mt-5">
+
+                <mat-card>
+                    <mat-card-title>Login</mat-card-title>
+                <mat-card-content>
+                    <form [formGroup]="form" (ngSubmit)="login()">
+                    <p>
+                        <mat-form-field>
+                        <input type="text" matInput placeholder="Username" formControlName="username">
+                        </mat-form-field>
+                    </p>
+            
+                    <p>
+                        <mat-form-field>
+                        <input type="password" matInput placeholder="Password" formControlName="password">
+                        </mat-form-field>
+                    </p>
+            
+
+                    <p *ngIf="success" style="background: greenyellow; color:#000;">
+                        {{ success }}
+                    </p>
+
+                    <p *ngIf="loading" style="background: orange; color:#000;">
+                        {{ loading }}
+                    </p>
+                    <p *ngIf="error" class="error">
+                        {{ error }}
+                    </p>
+
+            
+                    <div *ngIf="loading==''" class="button">
+                        <button type="submit" mat-button>Login</button>
+                    </div>
+            
+                    </form>
+                </mat-card-content>
+                </mat-card>
+
+
+            </div>
+        </div>
+    </div>
+
+    
+
+</div>

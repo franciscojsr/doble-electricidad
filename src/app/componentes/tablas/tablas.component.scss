@@ -1,0 +1,72 @@
+
+.mat-elevation-z8 {
+    height: 450px;
+    overflow: scroll;
+    // background: rgba(0,0,0,1);
+    background: rgba(12,34,34,1);
+    tr, mat-paginator{
+        background: rgba(12,34,34,0.5);
+    }
+}
+
+#bar_buttons_container{
+    display: flex;
+    justify-content: flex-end;
+    height: 65px;
+    width: 100%;
+    padding: 14px;
+    #search{
+        width: 150px;
+    }
+    .new_button{
+        margin-left: 5px;
+    }
+    .print_add_button{
+        margin-left: 5px;
+    }
+}
+
+table {
+    width: 100%;
+    .opciones_button {
+        margin-left: 5px;
+        // padding: 5px;
+        // text-align: right;
+    }
+    input{
+        pointer-events: none;
+        background: transparent;
+        border: none;
+        color: white;
+        text-align: center;
+    }
+}
+
+th.mat-header-cell {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+
+#modal_mensajes{
+    position: absolute;
+    bottom: 15px;
+    right: 80px;
+    padding: 15px 40px; 
+
+    background: #cdb70ec7;
+    width: fit-content;
+    border-radius: 5px;
+    border: 2px solid yellow;
+    box-shadow: 0px 0px 14px orange;
+    color: #fff;
+    font-weight: bold;
+    font-size: 20px;
+    i{
+        cursor: pointer;
+        position: absolute;
+        top: 2px;
+        right: 2px;
+        font-size: 25px;
+    }
+}
